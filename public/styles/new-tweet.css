@@ -1,6 +1,5 @@
 .new-tweet{
     border: 5px;
-  
     background-color: #C0C0C0;
     border-radius: 15px;
     margin: 2em;
@@ -22,4 +21,62 @@ h2{
     text-align: left;
     border-bottom: 1px solid black;
   
+}
+.tweets-container {
+  border: 1px solid black;
+  height: 12em;
+  border-radius: 15px;
+  margin-left: 2em;
+  width: 86%;
+  background-color: #C0C0C0;
+  opacity: 0.7;
+  margin-bottom: 2em;
+
+
+}
+.tweetHeader {
+  width: 100%;
+  height: 4em;
+  border-bottom: 1px solid black;
+}
+.tweetBody {
+  height: 5em;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background-color: #ffffff;
+ 
+}
+.image {
+  padding: 5px;
+  border-radius: 10px;
+  height: 4em;
+  width: 4em;
+}
+.userName {
+
+  font-size: 40px;
+  position: relative;
+  bottom: 0.5em;
+}
+.handle {
+  margin-top: 1em;
+  margin-right: 10px;
+  font-size: 15px;
+  float: right;
+  
+}
+.tweetcontent {
+  font-size: 20px;
+  position: relative;
+  top: 1em;
+  margin-left: 10px;
+}
+.tweetAge {
+  font-size: 15px;
+  position: relative;
+  margin-left: 10px;
+  top: 1em;
+}
+.tweets-container:hover {
+  opacity: 1;
 }
