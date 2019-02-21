@@ -12,8 +12,13 @@
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets container
   
-
+      function escape(str) {
+        var textarea = document.createElement('textarea');
+        textarea.appendChild(document.createTextNode(str));
+        return textarea.innerHTML;
+      }
   function createTweetElement(tdata) {
+    // let userinput = escape(tdata.content.text)
     return `<article class="tweets-container">        
         <header class= 'tweetHeader'>
             <div>
@@ -23,7 +28,7 @@
             </div>
         </header>
         <section class= 'tweetBody'>
-            <span class = 'tweetcontent' >${tdata.content.text}</span>
+            <span class = 'tweetcontent' >${escape(tdata.content.text)}</span>
         </section
         <footer class= 'tweetFooter'>
             <span class = 'tweetAge' >${tdata.created_at}</span>
