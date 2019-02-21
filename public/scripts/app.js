@@ -36,25 +36,7 @@ function renderTweet(tweet) {
     
 }
 
-$(function() {
-  var $form = $('#tweetform');
- 
-  $form.on('submit', function (event) {
-    event.preventDefault()
-    $.ajax('/tweets', { 
-      method: 'POST',
-      data: $(this).serialize(),
-      success: function (newtweet) {
-       
-      
-       let NewTweet = createTweetElement(newtweet)
-       $('#tweets').prepend(NewTweet);
-    }
-     })})
-     //data.prepend(createTweetElement(tdata))
-   // .then(function (morePostsHtml) 
-    //  $button.replaceWith(morePostsHtml);
-    });
+
     function loadTweets () {
       
       $.get('/tweets', function (tweets) {
@@ -65,10 +47,42 @@ $(function() {
         })
       })
     }
+    
+
+    
+        $(function() {
+          var $form = $('#tweetform');
+         
+          $form.on('submit', function (event) {
+            event.preventDefault()
+
+            if($('textarea').val() === '' || $('textarea').val() === null) {
+              alert('cant submit empty posts!');
+            } else if($('textarea').val().length > 140) {
+              alert('Too many charectors!');
+
+            } else {
+
+              $.ajax('/tweets', { 
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function (newtweet) {
+                  let NewTweet = createTweetElement(newtweet)
+                  $('#tweets').prepend(NewTweet);
+                }
+              } )
+            }
+          })
+        })
+             //data.prepend(createTweetElement(tdata))
+           // .then(function (morePostsHtml) 
+            //  $button.replaceWith(morePostsHtml);
+            
+      
 
     loadTweets()
 
-  renderTweet(data);
+  
   
   // Test / driver code (temporary)
 //  console.log($tweet); // to see what it looks like
