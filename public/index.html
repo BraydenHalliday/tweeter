@@ -34,16 +34,19 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action='/tweets/' method='POST'>
+        <form id= 'tweetform' action='/tweets/' method='POST'>
           <textarea class= "textarea" name="text" placeholder="What are you humming about?"></textarea>
           <div></div>
-          <input type="submit" value="Tweet">
+          <input id="tweetbutton" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
       <div></div>
+
       <article id="tweets"></article>
     </main>
+
   <script type="text/javascript" src="/scripts/app.js"></script>
+
   </body>
 </html>
