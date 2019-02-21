@@ -69,6 +69,8 @@ function renderTweet(tweet) {
                 success: function (newtweet) {
                   let NewTweet = createTweetElement(newtweet)
                   $('#tweets').prepend(NewTweet);
+                  $('textarea').val('')
+                  $('.counter').text(140)
                 }
               } )
             }
