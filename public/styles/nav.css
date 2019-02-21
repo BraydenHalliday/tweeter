@@ -1,5 +1,5 @@
 #nav-bar {
-
+    position: fixed;
     height: 80px;
     width: 100%;
     background-color: #00a087;
@@ -21,4 +21,18 @@
 }
 #nav-bar .header {
     font-size:200%;
+}
+#nav-bar .compose {
+    border: 1px solid black;
+    margin-top: 0.5em;
+    position: relative;
+    height: 2em;
+    width: 5em;
+    float: right;
+    border-radius: 10px;
+    font-size: 30px;
+} 
+
+#nav-bar .compose:hover {
+    background-color: #add8e6;
 }

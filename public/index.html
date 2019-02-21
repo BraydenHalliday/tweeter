@@ -27,13 +27,14 @@
      
       <img class="logo" src="/images/bird.png" >
       <span class="header">Tweeter</span>
-  
+      <button class="compose" >compose</button>
     </nav>
-
+ 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <p id='errorM'></p>
         <form id= 'tweetform' action='/tweets/' method='POST'>
           <textarea class= "textarea" name="text" placeholder="What are you humming about?"></textarea>
           <div></div>
@@ -42,7 +43,6 @@
         </form>
       </section>
       <div></div>
-
       <article id="tweets"></article>
     </main>
 

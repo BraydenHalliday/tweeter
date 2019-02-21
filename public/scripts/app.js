@@ -18,17 +18,17 @@
         return textarea.innerHTML;
       }
   function createTweetElement(tdata) {
-    // let userinput = escape(tdata.content.text)
+    let userinput = escape(tdata.content.text)
     return `<article class="tweets-container">        
-        <header class= 'tweetHeader'>
-            <div>
-                <img class="image" src=${tdata.user.avatars.small}>
-                <span class='userName'> ${tdata.user.name} </span>
-                <span class ='handle' >${tdata.user.handle}</span>
-            </div>
+    <header class= 'tweetHeader'>
+    <div>
+        <img class="image" src=${tdata.user.avatars.small}>
+        <span class='userName'> ${tdata.user.name} </span>
+        <span class ='handle' >${tdata.user.handle}</span>
+    </div>
         </header>
         <section class= 'tweetBody'>
-            <span class = 'tweetcontent' >${escape(tdata.content.text)}</span>
+            <span class = 'tweetcontent' >${userinput}</span>
         </section
         <footer class= 'tweetFooter'>
             <span class = 'tweetAge' >${tdata.created_at}</span>
@@ -62,12 +62,13 @@ function renderTweet(tweet) {
             event.preventDefault()
 
             if($('textarea').val() === '' || $('textarea').val() === null) {
-              alert('cant submit empty posts!');
+              $('#errorM').text("A minimum of 1 charector is required")
+              //$('#errorM').slideToggle(2000);
+             // $('#errorM').slidedown();
             } else if($('textarea').val().length > 140) {
-              alert('Too many charectors!');
-
+              $('#errorM').text("Too many charectors! The maxium is 140")
             } else {
-
+              $('#errorM').text("")
               $.ajax('/tweets', { 
                 method: 'POST',
                 data: $(this).serialize(),
@@ -84,9 +85,12 @@ function renderTweet(tweet) {
              //data.prepend(createTweetElement(tdata))
            // .then(function (morePostsHtml) 
             //  $button.replaceWith(morePostsHtml);
-            
-      
+      $('.compose').click(function () {
+        $('.new-tweet').toggle('fast')
+        $('textarea').focus()
 
+      })
+            
     loadTweets()
 
   
