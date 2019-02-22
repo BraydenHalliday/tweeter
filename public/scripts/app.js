@@ -13,25 +13,25 @@
       // takes return value and appends it to the tweets container
   
 function escape(str) {
-  var textarea = document.createElement('textarea');
-  textarea.appendChild(document.createTextNode(str));
-  return textarea.innerHTML;
+  var textArea = document.createElement('textArea');
+  textArea.appendChild(document.createTextNode(str));
+  return textArea.innerHTML;
 }
-function createTweetElement(tdata) {
-  let userinput = escape(tdata.content.text)
+function createTweetElement(data) {
+  let userinput = escape(data.content.text)
   return `<article class="tweets-container">        
     <header class= 'tweetHeader'>
       <div>
-        <img class="image" src=${tdata.user.avatars.small}>
-        <span class='userName'> ${tdata.user.name} </span>
-        <span class ='handle' >${tdata.user.handle}</span>
+        <img class="image" src=${data.user.avatars.small}>
+        <span class='userName'> ${data.user.name} </span>
+        <span class ='handle' >${data.user.handle}</span>
       </div>
     </header>
     <section class= 'tweetBody'>
       <span class = 'tweetcontent' >${userinput}</span>
     </section
     <footer class= 'tweetFooter'>
-      <span class = 'tweetAge' >${tdata.created_at}</span>
+      <span class = 'tweetAge' >${data.created_at}</span>
     </footer>
   </article>`
 }
@@ -43,8 +43,8 @@ function renderTweet(tweet) {
 function loadTweets () {
   $.get('/tweets', function (tweets) {
     tweets.forEach(tweet => { 
-      let newtweet = createTweetElement(tweet)
-      renderTweet(newtweet)
+      let newTweet = createTweetElement(tweet)
+      renderTweet(newTweet)
     })
   })
 }
@@ -53,7 +53,7 @@ $(function() {
   var $form = $('#tweetform');
   $form.on('submit', function (event) {
     event.preventDefault()
-// empty string / null logic (it said to include both in the instructions but I 
+// empty string / null logic (it said to include both in the instructions but I -
 //beleive including it is a redundancy with us already checking for an empty string 
     if($('textarea').val() === '' || $('textarea').val() === null) {
       $('#errorM').text("A minimum of 1 charector is required")
@@ -66,9 +66,9 @@ $(function() {
       $.ajax('/tweets', { 
         method: 'POST',
         data: $(this).serialize(),
-        success: function (newtweet) {
-          let NewTweet = createTweetElement(newtweet)
-          $('#tweets').prepend(NewTweet);
+        success: function (tweet) {
+          let newTweet = createTweetElement(tweet)
+          $('#tweets').prepend(newTweet);
           $('textarea').val('')
           $('.counter').text(140)
         }
@@ -76,7 +76,7 @@ $(function() {
     }
   })
 })
-// event listener for compose button to toggle the new 
+// event listener for compose button to toggle the new -
 //tweet field and focus it when aplicable 
 $('.compose').click(function () {
   $('.new-tweet').toggle('fast')

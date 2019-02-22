@@ -13,6 +13,12 @@ textarea{
   margin-left: 10px;
   margin-right: 10px;
 }
+#tweetbutton{
+  border-radius: 15px;
+}
+#tweetbutton:hover {
+  background-color: #add8e6;
+}
 
 .counter{
   float: right;
@@ -93,3 +99,4 @@ h2{
   bottom: 15px;
   color: red;
 }
+
