@@ -7,7 +7,7 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 // Fake data taken from tweets.json
 
-
+$(document).ready(function() {
     // loops through tweets
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets container
@@ -37,12 +37,14 @@ function createTweetElement(data) {
 }
 
 function renderTweet(tweet) {
-  $('#tweets').append(tweet);  
+  $('#tweets').prepend(tweet);  
 }
 
 function loadTweets () {
-  $.get('/tweets', function (tweets) {
-    tweets.forEach(tweet => { 
+  $.ajax('/tweets', { method: 'get'})
+    .then(function (tweets) {
+      console.log('egwfwiefbqe;cjwqbef', tweets);
+    tweets.forEach((tweet) => { 
       let newTweet = createTweetElement(tweet)
       renderTweet(newTweet)
     })
@@ -84,3 +86,5 @@ $('.compose').click(function () {
 })
 // loads tweets last 
 loadTweets()
+
+});
