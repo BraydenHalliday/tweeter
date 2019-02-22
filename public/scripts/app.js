@@ -67,6 +67,7 @@ function renderTweet(tweet) {
              // $('#errorM').slidedown();
             } else if($('textarea').val().length > 140) {
               $('#errorM').text("Too many charectors! The maxium is 140")
+          
             } else {
               $('#errorM').text("")
               $.ajax('/tweets', { 
