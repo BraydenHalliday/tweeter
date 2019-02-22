@@ -1,38 +1,37 @@
 #nav-bar {
-    position: fixed;
-    height: 80px;
-    width: 100%;
-    background-color: #00a087;
-    font: #e8fdff;
-    padding-left: 2em;
-    padding-right: 2em;
-    line-height: 80px;
-    vertical-align: middle;
-    
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #00a087;
+  font: #e8fdff;
+  padding-left: 2em;
+  padding-right: 2em;
+  line-height: 80px;
+  vertical-align: middle;
 }
-#nav-bar .logo {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin-right: 10px;
-    vertical-align:middle;
 
-    
+#nav-bar .logo {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  vertical-align:middle;
 }
+
 #nav-bar .header {
-    font-size:200%;
+  font-size:200%;
 }
 #nav-bar .compose {
-    border: 1px solid black;
-    margin-top: 0.5em;
-    position: relative;
-    height: 2em;
-    width: 5em;
-    float: right;
-    border-radius: 10px;
-    font-size: 30px;
+  border: 1px solid black;
+  margin-top: 0.5em;
+  position: relative;
+  height: 2em;
+  width: 5em;
+  float: right;
+  border-radius: 10px;
+  font-size: 30px;
 } 
 
 #nav-bar .compose:hover {
-    background-color: #add8e6;
+  background-color: #add8e6;
 }
