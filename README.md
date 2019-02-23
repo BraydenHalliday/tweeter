@@ -6,7 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 # this version was coded by: Brayden Halliday 
 ## Have an amazing day!!!
-## Dependencies
 
+## Screenshots
+
+!["Screenshot of tweet compose view"](https://github.com/BraydenHalliday/tweeter/blob/master/docs/new%20tweet%20view.png?raw=true)
+!["Screenshot of tweets view"](https://github.com/BraydenHalliday/tweeter/blob/master/docs/tweets%20view.png?raw=true)
+## Dependencies
 - Express
 - Node 5.10.x or above
