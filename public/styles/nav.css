@@ -6,7 +6,7 @@
   font: #e8fdff;
   padding-left: 2em;
   padding-right: 2em;
-  line-height: 80px;
+  z-index: 1;
   vertical-align: middle;
 }
 

@@ -24,14 +24,19 @@ function createTweetElement(data) {
       <div>
         <img class="image" src=${data.user.avatars.small}>
         <span class='userName'> ${data.user.name} </span>
-        <span class ='handle' >${data.user.handle}</span>
+        <span class='handle'>${data.user.handle}</span>
       </div>
     </header>
     <section class= 'tweetBody'>
       <span class = 'tweetcontent' >${userinput}</span>
-    </section
-    <footer class= 'tweetFooter'>
-      <span class = 'tweetAge' >${data.created_at}</span>
+    </section>
+    <footer class='tweetsFooter'>
+      <span class='tweetAge'>posted within 24 hours</span>
+      <span class='iconButtons'>
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="far fa-thumbs-up"></i>
+      </span>
     </footer>
   </article>`
 }
@@ -43,7 +48,6 @@ function renderTweet(tweet) {
 function loadTweets () {
   $.ajax('/tweets', { method: 'get'})
     .then(function (tweets) {
-      console.log('egwfwiefbqe;cjwqbef', tweets);
     tweets.forEach((tweet) => { 
       let newTweet = createTweetElement(tweet)
       renderTweet(newTweet)
@@ -86,5 +90,4 @@ $('.compose').click(function () {
 })
 // loads tweets last 
 loadTweets()
-
 });

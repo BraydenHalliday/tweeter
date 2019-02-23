@@ -5,7 +5,7 @@ $(document).ready(function() {
   $('.counter').html(holder)
   $('.textarea').on("keydown", function (evt) {
     let textLength = $('.textarea').val().length + 1
-    let remainingText = holder - textLength 
+    let remainingText = holder - textLength;
       if(remainingText < 0) {
 // red for when the client exceeds the charector limit 
         $('.counter').css('color', 'red')
