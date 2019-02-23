@@ -3,8 +3,9 @@
 $(document).ready(function() {
   let holder = 140
   $('.counter').html(holder)
-  $('.textarea').on("keydown", function (evt) {
-    let textLength = $('.textarea').val().length + 1
+  $('.textarea').on('keyup',function (evt) {
+// referencing evt so the stack has time to assign the value before referencing it
+    let textLength = evt.target.value.length
     let remainingText = holder - textLength;
       if(remainingText < 0) {
 // red for when the client exceeds the charector limit 
